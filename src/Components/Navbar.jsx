@@ -113,7 +113,7 @@ function DrawerAppBar(props) {
 							component="div"
 							sx={{ flexGrow: 1, display: { xs: "none", sm: "block", color: "#ced4d7" } }}
 							id="Navbar">
-							<b className="">MUSLIHAN</b>
+							<b className="">ian</b>
 						</Typography>
 						<Box sx={{ display: { xs: "none", sm: "block" } }}>
 							{navItems.map((item) => (
