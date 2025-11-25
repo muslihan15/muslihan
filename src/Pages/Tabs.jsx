@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { db, collection } from "../firebase";
-import { getDocs } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -54,29 +52,34 @@ function a11yProps(index) {
 
 export default function FullWidthTabs() {
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-  const [projects, setProjects] = useState([]);
-  const [certificates, setCertificates] = useState([]);
-  const [showAllProjects, setShowAllProjects] = useState(false);
-  const [showAllCertificates, setShowAllCertificates] = useState(false);
+  const [value, setValue] = useState(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const projectCollection = collection(db, "projects");
-        const certificateCollection = collection(db, "certificates");
+  //=========================== PROJECT DATA ===========================//
+  const projects = [
+    {
+      title: "e-Learning",
+      description:
+        "Platform pembelajaran online yang digunakan untuk mendukung proses belajar mengajar secara daring melalui fitur materi, tugas, dan evaluasi.",
+      img: "https://www.cybermakassar.com/asset/foto_berita/elearning-app.png",
+      link: "https://fikomlearning.xyz",
+    },
+    {
+      title: "Sistem Informasi UKM MAPALA UNASMAN",
+      description:
+        "Sistem informasi organisasi pecinta alam untuk mengelola data anggota, kegiatan pendakian, serta publikasi dokumentasi secara digital.",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9otTx7O3ZL8WOz_ipn-Kz9JsOCyepHNIH2A&s",
+      link: "https://mapala.unasman.ac.id",
+    },
+    {
+      title: "Sistem Informasi Fakultas Ilmu Komputer UNASMAN",
+      description:
+        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta akses layanan fakultas berbasis web.",
+      img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
+      link: "https://fikom-unasman.ac.id",
+    },
+  ];
 
-        const projectDocs = await getDocs(projectCollection);
-        const certificateDocs = await getDocs(certificateCollection);
-
-        setProjects(projectDocs.docs.map((doc) => doc.data()));
-        setCertificates(certificateDocs.docs.map((doc) => doc.data()));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  const certificates = []; // jika mau isi nanti tinggal tambah
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -93,103 +96,38 @@ export default function FullWidthTabs() {
             indicatorColor="secondary"
             variant="scrollable"
             scrollButtons="auto"
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              width: "auto",
-              margin: "0 auto",
-            }}
+            sx={{ display: "flex", justifyContent: "center", width: "auto", margin: "0 auto" }}
           >
-            <Tab
-              label="Project"
-              {...a11yProps(0)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
-            <Tab
-              label="Certificate"
-              {...a11yProps(1)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
-            <Tab
-              label="Tech Stack"
-              {...a11yProps(2)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
+            <Tab label="Project" {...a11yProps(0)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
+            <Tab label="Certificate" {...a11yProps(1)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
+            <Tab label="Tech Stack" {...a11yProps(2)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
           </Tabs>
         </AppBar>
 
-        {/* PANEL PROJECT */}
+        {/* PROJECT PANEL */}
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden ">
+          <div className="container mx-auto flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {(showAllProjects ? projects : projects.slice(0, 6)).map((project, index) => (
+              {projects.map((project, index) => (
                 <div key={index} data-aos="fade-up" data-aos-duration="1000">
                   <CardProject
-                    Img={project.Img}
-                    Title={project.Title}
-                    Description={project.Description.split(".")[0] + "."}
-                    Link={project.Link}
+                    Img={project.img}
+                    Title={project.title}
+                    Description={project.description}
+                    Link={project.link}
                   />
                 </div>
               ))}
             </div>
           </div>
-
-          {projects.length > 6 && (
-            <div className="mt-4 text-[#ced4d7]">
-              {showAllProjects ? (
-                <button onClick={() => setShowAllProjects(false)} className="opacity-75 italic text-sm">
-                  See Less
-                </button>
-              ) : (
-                <button onClick={() => setShowAllProjects(true)} className="opacity-75 text-sm">
-                  See More
-                </button>
-              )}
-            </div>
-          )}
         </TabPanel>
 
-        {/* PANEL CERTIFICATE */}
+        {/* CERTIFICATE PANEL */}
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-              {(showAllCertificates ? certificates : certificates.slice(0, 6)).map((sertif, index) => (
-                <div key={index} data-aos="fade-up" data-aos-duration="1000">
-                  <Certificate ImgSertif={sertif.Img} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {certificates.length > 6 && (
-            <div className="mt-4 text-[#ced4d7]">
-              {showAllCertificates ? (
-                <button onClick={() => setShowAllCertificates(false)} className="opacity-75 italic text-sm">
-                  See Less
-                </button>
-              ) : (
-                <button onClick={() => setShowAllCertificates(true)} className="opacity-75 text-sm">
-                  See More
-                </button>
-              )}
-            </div>
-          )}
+          <p className="text-center text-[#a6adba] italic">Belum ada sertifikat ditambahkan</p>
         </TabPanel>
 
-        {/* PANEL TECH STACK */}
+        {/* TECH STACK PANEL */}
         <TabPanel value={value} index={2} dir={theme.direction}>
           <div className="container mx-auto flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
