@@ -93,7 +93,12 @@ export default function FullWidthTabs() {
     },
   ];
 
-  const certificates = []; // jika mau isi nanti tinggal tambah
+  const certificates = [
+    {
+      title: "Aksara",
+      img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
+    },
+  ]; // jika mau isi nanti tinggal tambah
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
