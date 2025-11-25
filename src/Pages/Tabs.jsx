@@ -54,9 +54,9 @@ export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
 
-  //=========================== PROJECT DATA ===========================//
+  //============================ PROJECT DATA ============================//
   const projects = [
-     {
+    {
       title: "CRUD Data Mahasiswa",
       description:
         "CRUD Data Mahasiswa adalah kumpulan informasi lengkap tentang mahasiswa di perguruan tinggi di Indonesia.",
@@ -93,21 +93,33 @@ export default function FullWidthTabs() {
     },
   ];
 
+  //=========================== CERTIFICATE DATA ===========================//
   const certificates = [
-    {
-      title: "Aksara",
-      img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
-    },
-  ]; // jika mau isi nanti tinggal tambah
+    // Tambahkan item sertifikat kamu di sini:
+     {
+       title: "Aksara Lab Indonesia",
+       img: "https://cdn-web-2.ruangguru.com/landing-pages/assets/a23b73fa-bad1-46e7-895c-c0f7ada93e5b.png",
+     //  link: "link-detail-sertifikat",
+     },
+  ];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <div className="md:px-[10%] md:mt-20 mt-10" id="Tabs" data-aos="fade-up" data-aos-duration="800">
+    <div
+      className="md:px-[10%] md:mt-20 mt-10"
+      id="Tabs"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
       <Box sx={{ width: "100%" }}>
-        <AppBar position="static" sx={{ bgcolor: "transparent" }} className="px-[6%]">
+        <AppBar
+          position="static"
+          sx={{ bgcolor: "transparent" }}
+          className="px-[6%]"
+        >
           <Tabs
             value={value}
             onChange={handleChange}
@@ -115,15 +127,44 @@ export default function FullWidthTabs() {
             indicatorColor="secondary"
             variant="scrollable"
             scrollButtons="auto"
-            sx={{ display: "flex", justifyContent: "center", width: "auto", margin: "0 auto" }}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              width: "auto",
+              margin: "0 auto",
+            }}
           >
-            <Tab label="Project" {...a11yProps(0)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
-            <Tab label="Certificate" {...a11yProps(1)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
-            <Tab label="Tech Stack" {...a11yProps(2)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
+            <Tab
+              label="Project"
+              {...a11yProps(0)}
+              sx={{
+                fontWeight: "bold",
+                color: "#ced4d7",
+                fontSize: ["1rem", "2rem"],
+              }}
+            />
+            <Tab
+              label="Certificate"
+              {...a11yProps(1)}
+              sx={{
+                fontWeight: "bold",
+                color: "#ced4d7",
+                fontSize: ["1rem", "2rem"],
+              }}
+            />
+            <Tab
+              label="Tech Stack"
+              {...a11yProps(2)}
+              sx={{
+                fontWeight: "bold",
+                color: "#ced4d7",
+                fontSize: ["1rem", "2rem"],
+              }}
+            />
           </Tabs>
         </AppBar>
 
-        {/* PROJECT PANEL */}
+        {/* ===================== PROJECT PANEL ===================== */}
         <TabPanel value={value} index={0} dir={theme.direction}>
           <div className="container mx-auto flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -141,12 +182,30 @@ export default function FullWidthTabs() {
           </div>
         </TabPanel>
 
-        {/* CERTIFICATE PANEL */}
+        {/* ===================== CERTIFICATE PANEL ===================== */}
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <p className="text-center text-[#a6adba] italic">Belum ada sertifikat ditambahkan kecuali sertifikat Vaksin Heheheee :) </p>
+          {certificates.length === 0 ? (
+            <p className="text-center text-[#a6adba] italic">
+              Sertifikat akan ditampilkan di sini 😊
+            </p>
+          ) : (
+            <div className="container mx-auto flex justify-center items-center overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {certificates.map((certificate, index) => (
+                  <div key={index} data-aos="fade-up" data-aos-duration="1000">
+                    <Certificate
+                      Img={certificate.img}
+                      Title={certificate.title}
+                      Link={certificate.link}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </TabPanel>
 
-        {/* TECH STACK PANEL */}
+        {/* ===================== TECH STACK PANEL ===================== */}
         <TabPanel value={value} index={2} dir={theme.direction}>
           <div className="container mx-auto flex justify-center items-center overflow-hidden">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
