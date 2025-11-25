@@ -71,6 +71,13 @@ export default function FullWidthTabs() {
       link: "https://fikomlearning.xyz",
     },
     {
+      title: "Web Portofolio",
+      description:
+        "Web portofolio adalah situs web yang digunakan untuk memamerkan karya terbaik, keterampilan, dan pengalaman seseorang secara digital kepada publik. Fungsinya seperti portofolio cetak versi digital, yang bisa diakses secara online oleh siapa saja.",
+      img: "https://mycoding.id/storage/covers/270.jpg",
+      link: "https://muslihan.vercel.app/",
+    },
+    {
       title: "Sistem Informasi UKM MAPALA UNASMAN",
       description:
         "Sistem informasi organisasi pecinta alam untuk mengelola data anggota, kegiatan pendakian, serta publikasi dokumentasi secara digital.",
@@ -131,7 +138,7 @@ export default function FullWidthTabs() {
 
         {/* CERTIFICATE PANEL */}
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <p className="text-center text-[#a6adba] italic">Belum ada sertifikat ditambahkan</p>
+          <p className="text-center text-[#a6adba] italic">Belum ada sertifikat ditambahkan kecuali sertifikat Vaksin Heheheee :) </p>
         </TabPanel>
 
         {/* TECH STACK PANEL */}
