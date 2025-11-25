@@ -98,7 +98,7 @@ export default function FullWidthTabs() {
     // Tambahkan item sertifikat kamu di sini:
      {
        title: "Aksara Lab Indonesia",
-       img: "https://cdn-web-2.ruangguru.com/landing-pages/assets/a23b73fa-bad1-46e7-895c-c0f7ada93e5b.png",
+       img: "https://sendangsari.bantulkab.go.id/assets/files/artikel/sedang_163349145460e250f122139.jpg",
      //  link: "link-detail-sertifikat",
      },
   ];
