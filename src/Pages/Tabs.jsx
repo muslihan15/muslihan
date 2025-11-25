@@ -73,7 +73,7 @@ export default function FullWidthTabs() {
     {
       title: "Web Portofolio",
       description:
-        "Web portofolio adalah situs web yang digunakan untuk memamerkan karya terbaik, keterampilan, dan pengalaman seseorang secara digital kepada publik. Fungsinya seperti portofolio cetak versi digital, yang bisa diakses secara online oleh siapa saja.",
+        "Web portofolio adalah situs web yang digunakan untuk memamerkan karya terbaik, keterampilan, dan pengalaman seseorang secara digital kepada publik. yang bisa diakses secara online oleh siapa saja.",
       img: "https://mycoding.id/storage/covers/270.jpg",
       link: "https://muslihan.vercel.app/",
     },
