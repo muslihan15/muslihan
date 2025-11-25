@@ -13,11 +13,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function TabPanel(props) {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   const { children, value, index, ...other } = props;
 
   return (
@@ -54,94 +49,128 @@ export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
 
-  //=========================== PROJECT DATA ===========================//
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
+  // PROJECT DATA
   const projects = [
     {
       title: "e-Learning",
       description:
-        "Platform pembelajaran online yang digunakan untuk mendukung proses belajar mengajar secara daring melalui fitur materi, tugas, dan evaluasi.",
+        "Platform pembelajaran online yang digunakan untuk mendukung proses belajar mengajar melalui materi, tugas, dan evaluasi.",
       img: "https://www.cybermakassar.com/asset/foto_berita/elearning-app.png",
       link: "https://fikomlearning.xyz",
     },
     {
       title: "Sistem Informasi UKM MAPALA UNASMAN",
       description:
-        "Sistem informasi organisasi pecinta alam untuk mengelola data anggota, kegiatan pendakian, serta publikasi dokumentasi secara digital.",
+        "Sistem informasi untuk mengelola data anggota, kegiatan pendakian, serta publikasi dokumentasi organisasi pecinta alam.",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9otTx7O3ZL8WOz_ipn-Kz9JsOCyepHNIH2A&s",
       link: "https://mapala.unasman.ac.id",
     },
     {
       title: "Sistem Informasi Fakultas Ilmu Komputer UNASMAN",
       description:
-        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta akses layanan fakultas berbasis web.",
+        "Website resmi fakultas yang menyajikan informasi akademik, layanan fakultas, dan publikasi kegiatan.",
       img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
       link: "https://fikom-unasman.ac.id",
     },
   ];
 
-  const certificates = []; // jika mau isi nanti tinggal tambah
+  // CERTIFICATE DATA
+  const certificates = [
+    {
+      title: "Belajar Dasar Pemrograman JavaScript",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_433_0722_b6d7858ea9c8b8bc4bfef87429abb64e9b3e3e35.png",
+    },
+    {
+      title: "Belajar Dasar Visualisasi Data",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_556_0923_d6b53c7f6135c0b016e918a1962fa2a343b3bced.png",
+    },
+    {
+      title: "Belajar Membuat Aplikasi Web dengan React",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_621_1223_0de93e572cca0dfafad9dca7c42a7dc011b0a4af.png",
+    },
+    {
+      title: "Belajar Membuat Front-End Web untuk Pemula",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_594_1223_02e21c661d6d7b53e32a315b7d952c8f92edf3ec.png",
+    },
+    {
+      title: "Belajar Dasar Pemrograman Web",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_528_1123_4a46b2a18bdc2a0b99e8a4e6e22d0d82d7c5c7e0.png",
+    },
+    {
+      title: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+      img: "https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/course_certificate_478_0823_43e92b033f213922c6d8a167f9d24a45ad7955da.png",
+    },
+  ];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <div className="md:px-[10%] md:mt-20 mt-10" id="Tabs" data-aos="fade-up" data-aos-duration="800">
+    <div className="md:px-[10%] md:mt-20 mt-10" id="Tabs">
       <Box sx={{ width: "100%" }}>
-        <AppBar position="static" sx={{ bgcolor: "transparent" }} className="px-[6%]">
+        <AppBar position="static" sx={{ bgcolor: "transparent" }}>
           <Tabs
             value={value}
             onChange={handleChange}
-            textColor="secondary"
             indicatorColor="secondary"
-            variant="scrollable"
-            scrollButtons="auto"
-            sx={{ display: "flex", justifyContent: "center", width: "auto", margin: "0 auto" }}
+            textColor="secondary"
+            centered
           >
-            <Tab label="Project" {...a11yProps(0)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
-            <Tab label="Certificate" {...a11yProps(1)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
-            <Tab label="Tech Stack" {...a11yProps(2)} sx={{ fontWeight: "bold", color: "#ced4d7", fontSize: ["1rem", "2rem"] }} />
+            <Tab label="Project" {...a11yProps(0)} sx={{ fontWeight: "bold" }} />
+            <Tab label="Certificate" {...a11yProps(1)} sx={{ fontWeight: "bold" }} />
+            <Tab label="Tech Stack" {...a11yProps(2)} sx={{ fontWeight: "bold" }} />
           </Tabs>
         </AppBar>
 
-        {/* PROJECT PANEL */}
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {projects.map((project, index) => (
-                <div key={index} data-aos="fade-up" data-aos-duration="1000">
-                  <CardProject
-                    Img={project.img}
-                    Title={project.title}
-                    Description={project.description}
-                    Link={project.link}
-                  />
-                </div>
-              ))}
-            </div>
+        {/* PROJECT TAB */}
+        <TabPanel value={value} index={0}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <div key={index} data-aos="fade-up">
+                <CardProject
+                  Img={project.img}
+                  Title={project.title}
+                  Description={project.description}
+                  Link={project.link}
+                />
+              </div>
+            ))}
           </div>
         </TabPanel>
 
-        {/* CERTIFICATE PANEL */}
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          <p className="text-center text-[#a6adba] italic">Belum ada sertifikat ditambahkan</p>
+        {/* CERTIFICATE TAB */}
+        <TabPanel value={value} index={1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certificates.map((cert, index) => (
+              <div key={index} data-aos="zoom-in">
+                <Certificate ImgSertif={cert.img} />
+                <p className="text-center text-[#dadada] mt-2 font-medium">
+                  {cert.title}
+                </p>
+              </div>
+            ))}
+          </div>
         </TabPanel>
 
-        {/* TECH STACK PANEL */}
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-              <PIcon PIcon="html.svg" Language="HTML" />
-              <PIcon PIcon="css.svg" Language="CSS" />
-              <PIcon PIcon="javascript.svg" Language="JavaScript" />
-              <PIcon PIcon="tailwind.svg" Language="Tailwind CSS" />
-              <PIcon PIcon="reactjs.svg" Language="ReactJS" />
-              <PIcon PIcon="vite.svg" Language="Vite" />
-              <PIcon PIcon="nodejs.svg" Language="Node JS" />
-              <PIcon PIcon="bootstrap.svg" Language="Bootstrap" />
-              <PIcon PIcon="firebase.svg" Language="Firebase" />
-              <PIcon PIcon="MUI.svg" Language="Material UI" />
-            </div>
+        {/* TECH STACK TAB */}
+        <TabPanel value={value} index={2}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            <PIcon PIcon="html.svg" Language="HTML" />
+            <PIcon PIcon="css.svg" Language="CSS" />
+            <PIcon PIcon="javascript.svg" Language="JavaScript" />
+            <PIcon PIcon="tailwind.svg" Language="Tailwind CSS" />
+            <PIcon PIcon="reactjs.svg" Language="ReactJS" />
+            <PIcon PIcon="vite.svg" Language="Vite" />
+            <PIcon PIcon="nodejs.svg" Language="Node JS" />
+            <PIcon PIcon="bootstrap.svg" Language="Bootstrap" />
+            <PIcon PIcon="firebase.svg" Language="Firebase" />
+            <PIcon PIcon="MUI.svg" Language="Material UI" />
           </div>
         </TabPanel>
       </Box>
