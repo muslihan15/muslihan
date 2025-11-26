@@ -54,7 +54,7 @@ export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
 
-  //============================ PROJECT DATA ============================//
+  // ====================== PROJECT DATA ========================= //
   const projects = [
     {
       title: "CRUD Data Mahasiswa",
@@ -73,34 +73,33 @@ export default function FullWidthTabs() {
     {
       title: "Web Portofolio",
       description:
-        "Web portofolio adalah situs web yang digunakan untuk menampilkan karya terbaik, keterampilan, dan pengalaman seseorang secara digital kepada publik.",
+        "Website personal untuk menampilkan project, profil, dan riwayat karier secara profesional.",
       img: "https://mycoding.id/storage/covers/270.jpg",
       link: "https://muslihan.vercel.app/",
     },
     {
       title: "Sistem Informasi UKM MAPALA UNASMAN",
       description:
-        "Sistem informasi organisasi pecinta alam untuk mengelola data anggota, kegiatan pendakian, serta publikasi dokumentasi secara digital.",
+        "Sistem informasi organisasi pecinta alam untuk mengelola data anggota dan kegiatan pendakian.",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9otTx7O3ZL8WOz_ipn-Kz9JsOCyepHNIH2A&s",
       link: "https://mapala.unasman.ac.id",
     },
     {
       title: "Sistem Informasi Fakultas Ilmu Komputer UNASMAN",
       description:
-        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta akses layanan fakultas berbasis web.",
+        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta layanan fakultas.",
       img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
       link: "https://fikom-unasman.ac.id",
     },
   ];
 
-  //=========================== CERTIFICATE DATA ===========================//
+  // ====================== CERTIFICATE DATA ========================= //
   const certificates = [
-    // Tambahkan item sertifikat kamu di sini:
-     {
-       title: "Aksara Lab Indonesia",
-       img: "https://sendangsari.bantulkab.go.id/assets/files/artikel/sedang_163349145460e250f122139.jpg",
-     //  link: "link-detail-sertifikat",
-     },
+    {
+      title: "Contoh Sertifikat",
+      img: "https://imgx.sonora.id/crop/0x0:0x0/360x240/filters:format(webp):quality(50)/photo/2022/12/26/contoh-sertifikat-penghargaanjp-20221226053158.jpg",
+    },
+    // Tambah lagi 5 nanti sesuai kebutuhanmu
   ];
 
   const handleChange = (event, newValue) => {
@@ -108,18 +107,9 @@ export default function FullWidthTabs() {
   };
 
   return (
-    <div
-      className="md:px-[10%] md:mt-20 mt-10"
-      id="Tabs"
-      data-aos="fade-up"
-      data-aos-duration="800"
-    >
+    <div className="md:px-[10%] md:mt-20 mt-10" id="Tabs" data-aos="fade-up">
       <Box sx={{ width: "100%" }}>
-        <AppBar
-          position="static"
-          sx={{ bgcolor: "transparent" }}
-          className="px-[6%]"
-        >
+        <AppBar position="static" sx={{ bgcolor: "transparent" }}>
           <Tabs
             value={value}
             onChange={handleChange}
@@ -127,99 +117,55 @@ export default function FullWidthTabs() {
             indicatorColor="secondary"
             variant="scrollable"
             scrollButtons="auto"
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              width: "auto",
-              margin: "0 auto",
-            }}
+            sx={{ display: "flex", justifyContent: "center" }}
           >
-            <Tab
-              label="Project"
-              {...a11yProps(0)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
-            <Tab
-              label="Certificate"
-              {...a11yProps(1)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
-            <Tab
-              label="Tech Stack"
-              {...a11yProps(2)}
-              sx={{
-                fontWeight: "bold",
-                color: "#ced4d7",
-                fontSize: ["1rem", "2rem"],
-              }}
-            />
+            <Tab label="Project" {...a11yProps(0)} sx={{ color: "#ced4d7", fontWeight: "bold" }} />
+            <Tab label="Certificate" {...a11yProps(1)} sx={{ color: "#ced4d7", fontWeight: "bold" }} />
+            <Tab label="Tech Stack" {...a11yProps(2)} sx={{ color: "#ced4d7", fontWeight: "bold" }} />
           </Tabs>
         </AppBar>
 
-        {/* ===================== PROJECT PANEL ===================== */}
+        {/* ================= PROJECT ================= */}
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {projects.map((project, index) => (
-                <div key={index} data-aos="fade-up" data-aos-duration="1000">
-                  <CardProject
-                    Img={project.img}
-                    Title={project.title}
-                    Description={project.description}
-                    Link={project.link}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {projects.map((project, index) => (
+              <CardProject
+                key={index}
+                Img={project.img}
+                Title={project.title}
+                Description={project.description}
+                Link={project.link}
+              />
+            ))}
           </div>
         </TabPanel>
 
-        {/* ===================== CERTIFICATE PANEL ===================== */}
+        {/* ================= CERTIFICATE ================= */}
         <TabPanel value={value} index={1} dir={theme.direction}>
-          {certificates.length === 0 ? (
-            <p className="text-center text-[#a6adba] italic">
-              Sertifikat akan ditampilkan di sini 😊
-            </p>
-          ) : (
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {certificates.map((certificate, index) => (
-                  <div key={index} data-aos="fade-up" data-aos-duration="1000">
-                    <Certificate
-                      Img={certificate.img}
-                      Title={certificate.title}
-                      Link={certificate.link}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {certificates.map((certificate, index) => (
+              <Certificate
+                key={index}
+                ImgSertif={certificate.img}
+                Title={certificate.title}
+              />
+            ))}
+          </div>
         </TabPanel>
 
-        {/* ===================== TECH STACK PANEL ===================== */}
+        {/* ================= TECH STACK ================= */}
         <TabPanel value={value} index={2} dir={theme.direction}>
-          <div className="container mx-auto flex justify-center items-center overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-              <PIcon PIcon="html.svg" Language="HTML" />
-              <PIcon PIcon="css.svg" Language="CSS" />
-              <PIcon PIcon="javascript.svg" Language="JavaScript" />
-              <PIcon PIcon="tailwind.svg" Language="Tailwind CSS" />
-              <PIcon PIcon="reactjs.svg" Language="ReactJS" />
-              <PIcon PIcon="vite.svg" Language="Vite" />
-              <PIcon PIcon="nodejs.svg" Language="Node JS" />
-              <PIcon PIcon="bootstrap.svg" Language="Bootstrap" />
-              <PIcon PIcon="firebase.svg" Language="Firebase" />
-              <PIcon PIcon="MUI.svg" Language="Material UI" />
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            <PIcon PIcon="html.svg" Language="HTML" />
+            <PIcon PIcon="css.svg" Language="CSS" />
+            <PIcon PIcon="javascript.svg" Language="JavaScript" />
+            <PIcon PIcon="tailwind.svg" Language="Tailwind CSS" />
+            <PIcon PIcon="reactjs.svg" Language="ReactJS" />
+            <PIcon PIcon="vite.svg" Language="Vite" />
+            <PIcon PIcon="nodejs.svg" Language="Node JS" />
+            <PIcon PIcon="bootstrap.svg" Language="Bootstrap" />
+            <PIcon PIcon="firebase.svg" Language="Firebase" />
+            <PIcon PIcon="MUI.svg" Language="Material UI" />
           </div>
         </TabPanel>
       </Box>
