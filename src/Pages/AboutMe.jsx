@@ -83,13 +83,13 @@ const AboutMe = () => {
                             <div
                                 class="w-auto h-[8em] flex flex-col justify-center items-center rounded-sm"
                                 id="InfoAbout">
-                                <b className="text-3xl text-[#ced4d7]">{projectCount}+</b>
+                                <b className="text-3xl text-[#ced4d7]">5+</b>
                                 <div className="text-center text-[#a6adba]">Project Created</div>
                             </div>
                             <div
                                 class="w-auto h-[8em] flex flex-col justify-center items-center rounded-sm"
                                 id="InfoAbout">
-                                <b className="text-3xl text-[#ced4d7]">{certificateCount}+</b>
+                                <b className="text-3xl text-[#ced4d7]">7+</b>
                                 <div className="text-center text-[#a6adba]">Certificate</div>
                             </div>
                         </div>
