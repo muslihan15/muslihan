@@ -63,7 +63,7 @@ const AboutMe = () => {
 							className="text-[#a6adba] w-full text-justify text-xl mb-5 mt-5 md:mt-0"
 							data-aos="fade-up"
 							data-aos-duration="600">
-							Selamat datang di website saya! Saya adalah Muslihan, seorang dosen pada Program Studi Teknik Informatika, Fakultas Ilmu Komputer di Universitas Al Asyariah Mandar. Saya memiliki fokus pada bidang Teknologi Informasi, khususnya dalam pengembangan web Kecerdasan Buatan dan literasi digital sebagai bagian dari upaya menghadapi era Revolusi Industri 5.0. Saya aktif dalam menjalankan Tridarma Perguruan Tinggi melalui proses pembelajaran yang adaptif, penelitian yang berorientasi pada pengembangan ilmu pengetahuan, serta pengabdian kepada masyarakat dalam meningkatkan pemahaman dan keterampilan digital di lingkungan sekolah hingga masyarakat umum. Melalui website ini, Anda dapat menjelajahi perjalanan akademik saya, publikasi ilmiah, kegiatan pengabdian masyarakat, hingga proyek teknologi yang telah saya kembangkan. Mari berkolaborasi dalam menciptakan inovasi dan kemajuan di bidang teknologi informasi!
+							Selamat datang di website saya! Saya adalah Muslihan, seorang dosen pada Program Studi Teknik Informatika, Fakultas Ilmu Komputer di Universitas Al Asyariah Mandar. Saya memiliki fokus pada bidang Teknologi Informasi, khususnya dalam pengembangan web Kecerdasan Buatan dan literasi digital sebagai bagian dari upaya menghadapi era Revolusi Industri 5.0 dalam meningkatkan pemahaman dan keterampilan digital di lingkungan sekolah hingga masyarakat umum. Mari berkolaborasi dalam menciptakan inovasi dan kemajuan di bidang teknologi informasi!
 						</p>
 
 						<div className="relative " data-aos="fade-up" data-aos-duration="800">
