@@ -99,8 +99,20 @@ export default function FullWidthTabs() {
      {
        title: "Aksara Lab Indonesia",
        img: "https://sendangsari.bantulkab.go.id/assets/files/artikel/sedang_163349145460e250f122139.jpg",
-     //  link: "link-detail-sertifikat",
+     //  link: "link-detail-sertifikat", https://photos.app.goo.gl/gZaT4oP3edvbqomY7
      },
+    {
+       title: "Aksara Lab Indonesia",
+       img: "https://photos.app.goo.gl/gZaT4oP3edvbqomY7",
+    },
+    {
+       title: "Aksara Lab Indonesia",
+       img: "https://photos.app.goo.gl/ibrE95vCg5R8YeXt9",
+    },
+    {
+       title: "ElevAIte",
+       img: "https://photos.app.goo.gl/RkyDzCkvmupB74EPA",
+    },
   ];
 
   const handleChange = (event, newValue) => {
