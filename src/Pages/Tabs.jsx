@@ -97,13 +97,13 @@ export default function FullWidthTabs() {
   const certificates = [
     // Tambahkan item sertifikat kamu di sini:
      {
-       title: "Aksara Lab Indonesia",
-       img: "https://sendangsari.bantulkab.go.id/assets/files/artikel/sedang_163349145460e250f122139.jpg",
+       title: "Sertifikat BNSP Operator Komputer Junior ",
+       img: "https://lh3.googleusercontent.com/pw/AP1GczMsHk6nNxokL2apf5wtILsohLDRHbotzFvctniUN_4OTssiNikMNeCs9duaRKqbTVxiLts9iEjOYde5trCZA9L_kqL25vW-5Mb2UnjV5dzKt6x7EWzaURMHj7LHWzXwVv9e1XQqSPJHSdnM01vnqwr7=w539-h739-s-no-gm?authuser=0",
      //  link: "link-detail-sertifikat", https://photos.app.goo.gl/gZaT4oP3edvbqomY7
      },
     {
        title: "Aksara Lab Indonesia",
-       img: "https://photos.google.com/share/AF1QipM_6ND89ClZI6pgFA6k-8uGClmBYVr_4q4oY50OaiUQOoNmZTDUY6RnnOw5d1mmsQ/photo/AF1QipMdbCxcSrlSwl7dgE6xQkysp-7Jpq1POEZa07cz?key=dXlnR19idE11UHBUSU9FMGRzSmNldFVuc1RiY1NB",
+       img: "https://lh3.googleusercontent.com/pw/AP1GczNv8oQ3v4vomlJR6KSrCbJAh0CB9-zrNE39fWCmNz-U4g2aqEZnKYhYzDz84TyjLaQCpmXzHInU02-vZFS3ydE5AKNr0IMMrlMlUJeOkkVqmRsUEJZwtC5TkC_2HsScyRnwev6go9Cjj-qFn5kNpxSA=w1046-h739-s-no-gm?authuser=0",
     },
     {
        title: "Aksara Lab Indonesia",
