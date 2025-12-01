@@ -103,11 +103,11 @@ export default function FullWidthTabs() {
      },
     {
        title: "Aksara Lab Indonesia",
-       img: "https://photos.fife.usercontent.google.com/pw/AP1GczPmiLP8DJB-czb-czA2yvPiamDxfSq9dJ4U7kysnEC_VEbpf_a7a8rz=w1046-h739-s-no-gm?authuser=4",
+       img: "https://photos.google.com/share/AF1QipM_6ND89ClZI6pgFA6k-8uGClmBYVr_4q4oY50OaiUQOoNmZTDUY6RnnOw5d1mmsQ/photo/AF1QipMdbCxcSrlSwl7dgE6xQkysp-7Jpq1POEZa07cz?key=dXlnR19idE11UHBUSU9FMGRzSmNldFVuc1RiY1NB",
     },
     {
        title: "Aksara Lab Indonesia",
-       img: "https://photos.fife.usercontent.google.com/pw/AP1GczPpy1AD6Gm3m38nDobfrmxVEX5N15cTZB6a-UM4C40AocM_enJ05Nvs=w1047-h739-s-no-gm?authuser=4",
+       img: "https://lh3.googleusercontent.com/pw/AP1GczOb1192LNAuAzNoyZ7AALZISakiOw1XKhaTdhpg_9KVBA0uOW0mcxPKqEgc3fTSc-xll7WNAHaiaf3J40zuFGCbfyZZZOZsl59nG9PFLWbKx0I4MgtLO9oIWP7e7oxKfLf8Lina_8ugP0iA3oTA_K18=w1047-h739-s-no-gm?authuser=0",
     },
     {
        title: "ElevAIte",
