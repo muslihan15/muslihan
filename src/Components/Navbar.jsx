@@ -53,9 +53,17 @@ function ELearning() {
     </a>
   )
 }
+function Absensi() {
+  return (
+    <a href="https://komputerku.co-id.id/absen/" target="_blank" 
+       rel="noopener noreferrer">
+      e-Learning
+    </a>
+  )
+}
 
 const drawerWidth = 240
-const navItems = [<Home />, <About />, <Contact />, <ELearning />]
+const navItems = [<Home />, <About />, <Contact />, <ELearning />, <Absensi />]
 
 function DrawerAppBar(props) {
   const { window } = props
