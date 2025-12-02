@@ -57,7 +57,7 @@ function Absensi() {
   return (
     <a href="https://komputerku.co-id.id/absen/" target="_blank" 
        rel="noopener noreferrer">
-      e-Learning
+      Absensi Kuliah Umum
     </a>
   )
 }
