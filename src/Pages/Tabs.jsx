@@ -96,7 +96,7 @@ export default function FullWidthTabs() {
       description:
         "Website E-Katalog Nusa Pustaka Digital ini dibuat agar kekayaan budaya dan sejarah Lokal Mandar dalam bentuk digitalisasi buku dapat di eksplore, manuskrip kuno, dan artefak bersejarah yang terawat dengan baik",
       img: "https://lh3.googleusercontent.com/pw/AP1GczMIrtsmtUZbALjufr3C6AiU7dF__s0LSIvDglkcCrkdBjY8Ig6eLXK9QRRo5Wc5b8n-qMLCnne-3mvGbcnpHF3tk3Ru8Qipi0SgIO2ci58iMbRglMB_q79VqrjizfDKN0UjKHbAHdzBPV-Z2fGubG5s=w1570-h680-s-no-gm?authuser=0",
-      link: "nusa-pustaka-digital.lovable.app",
+      link: "https://nusa-pustaka-digital.lovable.app/",
     },
     {
       title: "Sistem Informasi Persuratan Desa (SIPD)",
