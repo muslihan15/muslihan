@@ -94,9 +94,23 @@ export default function FullWidthTabs() {
      {
       title: "E-Katalog Nusa Pustaka Library & Moseum",
       description:
-        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta akses layanan fakultas berbasis web.",
+        "Website E-Katalog Nusa Pustaka Digital ini dibuat agar kekayaan budaya dan sejarah Lokal Mandar dalam bentuk digitalisasi buku dapat di eksplore, manuskrip kuno, dan artefak bersejarah yang terawat dengan baik",
       img: "https://lh3.googleusercontent.com/pw/AP1GczMIrtsmtUZbALjufr3C6AiU7dF__s0LSIvDglkcCrkdBjY8Ig6eLXK9QRRo5Wc5b8n-qMLCnne-3mvGbcnpHF3tk3Ru8Qipi0SgIO2ci58iMbRglMB_q79VqrjizfDKN0UjKHbAHdzBPV-Z2fGubG5s=w1570-h680-s-no-gm?authuser=0",
       link: "nusa-pustaka-digital.lovable.app",
+    },
+    {
+      title: "Sistem Informasi Persuratan Desa (SIPD)",
+      description:
+        "Sistem ini membantu perangkat desa dalam membuat, mencatat, menyimpan, dan mendistribusikan surat secara lebih cepat, rapi, dan terdokumentasi",
+      img: "https://lh3.googleusercontent.com/pw/AP1GczMt_mN519AZfkLolitPS5oPd9CH6Xhsu5MY3mBi6XmWQMmxO9ipxo7jwHzxPh1bs6pPITsRSyprwBiY7zpyOjAu4LVYpKD0bLVsTiLyNJ7SYy8-k_-bye4EJQlGX2sonR7ZPfBGEYosHTw6yYO6t8mu=w1538-h679-s-no-gm?authuser=0",
+      link: "https://godigital.lovable.app",
+    },
+     {
+      title: "DigiNusa Cloud Solutions",
+      description:
+        "Website perusahaan atau layanan teknologi informasi yang menyediakan solusi digital berbasis cloud, seperti hosting, server cloud, penyimpanan data, dan layanan pengembangan website atau aplikasi untuk individu, organisasi, maupun bisnis.",
+      img: "https://lh3.googleusercontent.com/pw/AP1GczMPlCy-6HJT6T83eR00WE_G5DpbYcIeHBaSIRtEpO2hnyiQ_RPg2RPYnPMkhb9yRooNLeTjGfDpTnrOtLHgrRSRxslB9fEnudSK2l-c-Tw9Y0FqQQzWmUDT9ZPNEH_JgNfogmO8iyJsBxMa7agW9GMA=w1565-h710-s-no-gm?authuser=0",
+      link: "https://nusaahost.my.id/",
     },
   ];
 
