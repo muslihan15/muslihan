@@ -91,6 +91,13 @@ export default function FullWidthTabs() {
       img: "https://lib.lppm-unasman.ac.id/template/default/img/1.jpg",
       link: "https://fikom-unasman.ac.id",
     },
+     {
+      title: "E-Katalog Nusa Pustaka Library & Moseum",
+      description:
+        "Website resmi fakultas yang menyediakan informasi akademik, kegiatan, berita, serta akses layanan fakultas berbasis web.",
+      img: "https://lh3.googleusercontent.com/pw/AP1GczMIrtsmtUZbALjufr3C6AiU7dF__s0LSIvDglkcCrkdBjY8Ig6eLXK9QRRo5Wc5b8n-qMLCnne-3mvGbcnpHF3tk3Ru8Qipi0SgIO2ci58iMbRglMB_q79VqrjizfDKN0UjKHbAHdzBPV-Z2fGubG5s=w1570-h680-s-no-gm?authuser=0",
+      link: "nusa-pustaka-digital.lovable.app",
+    },
   ];
 
   //=========================== CERTIFICATE DATA ===========================//
